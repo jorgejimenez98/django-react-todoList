@@ -19,7 +19,7 @@ $ cd nombre-carpeta-donde-estara-el-proyecto
 ```
 
 Crear un entorno virtual para instalar las dependencias y correr el proyecto, primero abrir el cmd en el directorio del <nombre-carpeta-donde-estara-el-proyecto> y escribir:
-``
+
 ```sh
 $ py -m venv nombre-env
 $ cd nombre-env/Scripts/
@@ -51,7 +51,7 @@ $ npm install --save
 ```
 
 Correr el frontend:
-``
+
 ```sh
 $ npm start
 ```
