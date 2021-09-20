@@ -1,7 +1,13 @@
 # django-react-todoList
 Un todo-list básico realizado con django en el backend y react en el frontend
 
-![Alt text](frontend/public/example.png?raw=true "Ejemplo")
+## Componente de los TODOS
+![Alt text](frontend/public/todos.png?raw=true "Ejemplo")
+
+## Componente de los Comentarios
+![Alt text](frontend/public/comentarios.png?raw=true "Ejemplo")
+
+# Pasos para correr el app en la PC
 
 ## Iniciar backend
 
@@ -30,6 +36,7 @@ Notar que `(nombre-env)` delante del comando indica solamente que la terminal ti
 Una vez que se hallan instalado las dependencias haz lo siguiente:
 ```sh
 (nombre-env)$ cd backend
+(nombre-env)$ python manage.py migrate
 (nombre-env)$ python manage.py runserver
 ```
 Y navega a la url `http://127.0.0.1:8000/api/` en caso de que quieras consultar la api del sistema
