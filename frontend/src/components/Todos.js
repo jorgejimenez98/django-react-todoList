@@ -18,7 +18,6 @@ function Todos({
   filtrarNoCompletados,
   tomarTabla,
   filtrarCompletados,
-  seleccionarTarea,
 }) {
   const dispatch = useDispatch();
   const [value, setValue] = React.useState(0);
@@ -50,7 +49,7 @@ function Todos({
 
   return (
     <Container className="p-20">
-      <h5 className="text-left text-muted">
+      <h5 className="text-center text-muted">
         Tareas Personales <small>{tareas.length}</small>
       </h5>
       {/* Formulario */}
@@ -67,7 +66,6 @@ function Todos({
               key={value.id}
               handleToggle={handleToggle}
               value={value}
-              seleccionarTarea={seleccionarTarea}
               deleteTarea={deleteTarea}
             />
           );
