@@ -9,17 +9,14 @@ import {
   filtrarTareasCompletadas,
   filtrarTareasNoCompletadas,
 } from "../redux/todoActions";
-import { Row, Col } from "react-bootstrap";
-import Comentarios from "./Comentarios";
 import Todos from "./Todos";
 
-function Casa() {
+function Casa({ history }) {
   const dispatch = useDispatch();
   const [tareaSeleccionada, setTareaSeleccionada] = useState(null);
 
   // Todo Selector
   const { tareas } = useSelector((state) => state.todos);
-
 
   useEffect(() => {
     dispatch(obtenerTareas());
@@ -62,30 +59,18 @@ function Casa() {
     dispatch(filtrarTareasCompletadas());
   };
 
-  const seleccionarTarea = (todoId) => {
-    setTareaSeleccionada(todoId);
-  };
-
   return (
-    <div className="ml-2 mr-2">
-      <Row>
-        <Col md={6} xs={12}>
-          <Todos
-            tareas={tareas}
-            insertarTodo={insertarTodo}
-            deleteTarea={deleteTarea}
-            checkearTarea={checkearTarea}
-            eliminarCompletados={eliminarCompletados}
-            filtrarNoCompletados={filtrarNoCompletados}
-            tomarTabla={tomarTabla}
-            filtrarCompletados={filtrarCompletados}
-            seleccionarTarea={seleccionarTarea}
-          />
-        </Col>
-        <Col md={6} xs={12}>
-          <Comentarios tareaSeleccionada={tareaSeleccionada} />
-        </Col>
-      </Row>
+    <div className="mt-2">
+      <Todos
+        tareas={tareas}
+        insertarTodo={insertarTodo}
+        deleteTarea={deleteTarea}
+        checkearTarea={checkearTarea}
+        eliminarCompletados={eliminarCompletados}
+        filtrarNoCompletados={filtrarNoCompletados}
+        tomarTabla={tomarTabla}
+        filtrarCompletados={filtrarCompletados}
+      />
     </div>
   );
 }
