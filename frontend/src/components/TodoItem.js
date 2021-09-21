@@ -1,5 +1,6 @@
 import React from "react";
 import { Comment, Delete } from "@material-ui/icons";
+import { LinkContainer } from "react-router-bootstrap";
 import {
   ListItem,
   ListItemIcon,
@@ -14,7 +15,6 @@ function TodoItem({
   handleToggle,
   labelId,
   value,
-  seleccionarTarea,
   deleteTarea,
 }) {
   return (
@@ -40,16 +40,11 @@ function TodoItem({
           className={value.completado ? "line" : ""}
         />
         <ListItemSecondaryAction>
-          <IconButton
-            edge="end"
-            aria-label="comments"
-            className="mr-2"
-            onClick={() => {
-              seleccionarTarea(value.id);
-            }}
-          >
-            <Comment />
-          </IconButton>
+          <LinkContainer to={`/todos/${value.id}/comentarios`}>
+            <IconButton edge="end" aria-label="comments" className="mr-2">
+              <Comment />
+            </IconButton>
+          </LinkContainer>
           <IconButton
             edge="end"
             aria-label="comments"
