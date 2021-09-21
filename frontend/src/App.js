@@ -34,7 +34,6 @@ function App() {
           })}
           <Redirect from="/" to="/todos" />
         </Switch>
-        <Route path="/" component={Casa} exact />
       </main>
     </Router>
   );
