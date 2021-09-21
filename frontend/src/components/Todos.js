@@ -3,7 +3,6 @@ import { useDispatch } from "react-redux";
 import Formulario from "./Formulario";
 import FooterList from "./FooterList";
 import TodoItem from "./TodoItem";
-import { Container } from "react-bootstrap";
 import { DELETE_TODO } from "../redux/totoConstants";
 import { List } from "@material-ui/core";
 import { useFormik } from "formik";
@@ -48,7 +47,7 @@ function Todos({
   };
 
   return (
-    <Container className="p-20">
+    <div className="ml-5 mr-5">
       <h5 className="text-center text-muted">
         Tareas Personales <small>{tareas.length}</small>
       </h5>
@@ -81,7 +80,7 @@ function Todos({
         filtrarNoCompletados={filtrarNoCompletados}
         eliminarCompletados={eliminarCompletados}
       />
-    </Container>
+    </div>
   );
 }
 
